@@ -1,0 +1,232 @@
+@use "./typography" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "TitilliumWeb";
+  font-size: 1.6rem;
+  margin: 0 auto;
+  color: $primary-color-1;
+  position: relative;
+}
+
+// ALL FONT-STYLES ================================================
+
+h1 {
+  @include font-styles(2.8rem, 3.6rem, 600);
+  margin: 0;
+
+  @include tablet {
+    @include font-styles(3.2rem, 4rem, 600);
+  }
+}
+
+h2 {
+  @include font-styles(2rem, 2.8rem, 600);
+  margin: 0;
+
+  @include tablet {
+    @include font-styles(2.4rem, 3.2rem, 600);
+  }
+}
+
+h3 {
+  @include font-styles(1.3rem, 2rem, 600);
+  margin: 0;
+
+  @include tablet {
+    @include font-styles(1.4rem, 2.2rem, 600);
+  }
+}
+
+h4 {
+  @include font-styles(1.1rem, 1.6rem, 600);
+  margin: 0;
+
+  @include tablet {
+    @include font-styles(1.2rem, 1.8rem, 600);
+  }
+}
+
+.p1 {
+  @include font-styles(1.5rem, 2.6rem, 400);
+  margin: 0;
+
+  @include tablet {
+    @include font-styles(1.6rem, 2.8rem, 400);
+  }
+}
+
+.p2 {
+  @include font-styles(1.3rem, 2rem, 400);
+  margin: 0;
+
+  @include font-styles(1.4rem, 2.2rem, 400);
+}
+
+.p3 {
+  @include font-styles(1.1rem, 1.6rem, 400);
+  margin: 0;
+
+  @include tablet {
+    @include font-styles(1.2rem, 1.8rem, 400);
+  }
+}
+
+// ALL BUTTON STYLES ===========================================
+
+.button-primary {
+  @include font-styles(1.3rem, 2rem, 600);
+  @include flex(row, center, center, nowrap);
+  @include size(100%, 3.6rem);
+  padding: 1.6rem 0;
+  border: none;
+  outline: none;
+  background-color: $primary-color-2;
+  color: $primary-color-3;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-family: inherit;
+
+  &:hover {
+    background-color: $background-color-1;
+    cursor: pointer;
+  }
+
+  @include tablet {
+    @include size(initial, 3.8rem);
+    font-size: 1.2rem;
+    padding: 0 1.6rem;
+  }
+}
+
+.button-secondary {
+  @include font-styles(1.3rem, 2rem, 600);
+  @include flex(row, center, center, nowrap);
+  @include size(100%, 3.6rem);
+  padding: 0.8rem 0;
+  border: 1px solid $secondary-color-2;
+  outline: none;
+  background-color: $primary-color-3;
+  color: $secondary-color-1;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-family: inherit;
+
+  &:hover {
+    border-color: $primary-color-2;
+    color: $primary-color-2;
+    cursor: pointer;
+  }
+
+  @include tablet {
+    @include size(initial, 3.8rem);
+    font-size: 1.2rem;
+    padding: 0 1.6rem;
+  }
+}
+
+.button-delete {
+  @include font-styles(1.3rem, 2rem, 600);
+  @include flex(row, center, center, nowrap);
+  @include size(100%, 3.6rem);
+  padding: 0.8rem 0;
+  border: none;
+  outline: none;
+  background-color: $supporting-color-2;
+  color: $primary-color-3;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-family: inherit;
+
+  &:hover {
+    background-color: $background-color-1;
+    color: $primary-color-3;
+    cursor: pointer;
+  }
+
+  @include tablet {
+    @include size(initial, 3.8rem);
+    font-size: 1.2rem;
+    padding: 0 1.6rem;
+  }
+}
+
+// ALL TEXT-LINK STYLES =====================================================
+
+.text-link {
+  @include font-styles(1.3rem, 2rem, 600);
+  color: $primary-color-2;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @include tablet {
+    @include font-styles(1.4rem, 2.2rem, 600);
+  }
+}
+
+// ALL FORM STYLES  =========================================================
+
+.form-text-field {
+  @include font-styles(1.3rem, 2rem, 400);
+  color: $secondary-color-1;
+  margin-top: 0.4rem;
+  border: 1px solid $secondary-color-2;
+  border-radius: 2rem;
+  padding: 0.8rem 1.6rem;
+  height: 3.6rem;
+  outline: none;
+  padding-left: 1.5rem;
+  font-family: inherit;
+
+  &:active {
+    color: $primary-color-1;
+    border-color: $primary-color-2;
+  }
+
+  &--error {
+    border-color: $supporting-color-2;
+  }
+
+  @include tablet {
+    @include font-styles(1.4rem, 2.2rem, 400);
+  }
+}
+
+// MAIN CONTAINER WRAP STYLING ============================
+
+.container-wrap {
+  border-radius: 0.3rem;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  position: relative;
+  height: 100%;
+  z-index: 10;
+  margin: 0 1.6rem;
+  bottom: 6rem;
+  background-color: white;
+
+  @include tablet {
+    bottom: 9.3rem;
+    margin: 0 auto;
+    width: 92%;
+    max-width: 102rem;
+  }
+
+  @include desktop {
+    width: 102rem;
+  }
+}

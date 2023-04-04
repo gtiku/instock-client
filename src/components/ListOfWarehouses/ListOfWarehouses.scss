@@ -1,0 +1,143 @@
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/global" as *;
+
+.warehouse-item {
+  border-bottom: 1px solid $secondary-color-2;
+  padding: 2.4rem 1.6rem 1rem 1.6rem;
+
+  &:hover {
+    background-color: rgba(46, 102, 230, 0.07);
+  }
+
+  @include tablet {
+    padding: 1.6rem 2.4rem;
+    @include flex(row, space-between, center, initial);
+  }
+
+  &__info-container {
+    @include flex(column, flex-start, flex-start, wrap);
+    height: 15rem;
+
+    @include tablet {
+      @include flex(row, space-between, center, initial);
+      height: 100%;
+      width: 88%;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__name-container {
+    width: 50%;
+    height: 7.5rem;
+
+    @include tablet {
+      height: 100%;
+      width: 23%;
+    }
+  }
+
+  &__name-link {
+    position: relative;
+  }
+
+  &__name-arrow {
+    all: unset;
+    position: absolute;
+    top: 0.5px;
+    height: 2rem;
+
+    &:hover {
+      animation: move-right 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      animation-play-state: running;
+      @keyframes move-right {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  &__address-container {
+    @extend .warehouse-item__name-container;
+
+    @include tablet {
+      width: 23%;
+    }
+  }
+
+  &__address-content {
+    @extend .p2;
+    font-size: 1.3rem;
+  }
+
+  &__contact-name-container {
+    @extend .warehouse-item__name-container;
+
+    @include tablet {
+      width: 25%;
+    }
+  }
+
+  &__contact-name-content {
+    @extend .warehouse-item__address-content;
+  }
+
+  &__contact-info-container {
+    @extend .warehouse-item__name-container;
+    height: 6rem;
+
+    @include tablet {
+      height: 100%;
+      width: 23%;
+    }
+  }
+
+  &__contact-info-content {
+    @extend .warehouse-item__address-content;
+  }
+
+  &__edit-delete-container {
+    width: 100%;
+
+    @include tablet {
+      width: 7rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.list-desktop {
+  display: none;
+
+  @include tablet {
+    display: initial;
+  }
+
+  &__headers {
+    @include flex(row, space-between, center, initial);
+    padding: 0 2.4rem;
+    background-color: $background-color-2;
+    height: 4rem;
+  }
+
+  &__categories {
+    @include flex(row, center, center, initial);
+    color: $secondary-color-1;
+  }
+
+  &__sorticon {
+    height: 1.6rem;
+    padding-left: 0.5rem;
+  }
+}

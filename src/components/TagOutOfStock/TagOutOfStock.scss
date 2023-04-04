@@ -1,0 +1,31 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/_mixins' as *;
+
+.tag-out {
+    height: 2.4rem;
+    width: 8.5rem;
+    background-color: rgb(201, 69, 21, .07);
+    color: $supporting-color-2;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+        @media (min-width: 768px) {
+            height: 2.6rem;
+            width: 8.7rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.1rem;
+        font-weight: 700;
+
+        @include tablet {
+            @media (min-width: 768px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

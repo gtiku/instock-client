@@ -1,0 +1,13 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  background-color: $background-color-2;
+  @include flex(row, center, flex-end, nowrap);
+  padding: 4rem 1.6rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

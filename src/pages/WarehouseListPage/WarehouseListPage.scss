@@ -1,0 +1,214 @@
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.input-button {
+  &__wrapper {
+<<<<<<< HEAD
+    margin-inline: 2.4rem;
+    padding-top: 2.4rem;
+=======
+    padding: 2.4rem;
+    border-bottom: 0.1rem solid $secondary-color-2;
+>>>>>>> develop
+  }
+
+  @include tablet {
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0;
+      border: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    justify-content: space-evenly;
+  }
+
+  @include tablet {
+    &__container {
+      flex-direction: row;
+      height: 7rem;
+      justify-content: end;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.8rem;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__search {
+    background-image: url(../../assets/images/Icons/search-24px.svg);
+    background-repeat: no-repeat;
+    background-position: 97%;
+  }
+  @include tablet {
+    &__search {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.list {
+  &__titles {
+    color: $secondary-color-1;
+    text-transform: uppercase;
+  }
+
+  &__location {
+    color: $primary-color-2;
+    font-weight: 600;
+    margin-top: 0rem;
+    width: 100%;
+    text-align: inherit;
+    margin-bottom: 2rem;
+  }
+
+  &__warehouse-address {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__mobile {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+  }
+  @include tablet {
+    &__mobile {
+      display: none;
+    }
+  }
+
+  &__deleteEdit--mobile {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 10%;
+    margin-bottom: 1rem;
+  }
+  @include tablet {
+    &__deleteEdit--mobile {
+      display: none;
+    }
+  }
+
+  &__deleteEdit--desktop {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 2.7rem;
+    margin-top: 1rem;
+    mix-blend-mode: multiply;
+  }
+
+  &__delete {
+    cursor: pointer;
+    background-image: url(../../assets/images/Icons/delete_outline-24px.svg);
+    height: 3rem;
+    background-repeat: no-repeat;
+    width: 3rem;
+    border: none;
+    background-color: white;
+  }
+
+  &__edit {
+    cursor: pointer;
+    background-image: url(../../assets/images/Icons/edit-24px.svg);
+    height: 3rem;
+    background-repeat: no-repeat;
+    width: 3rem;
+    border: none;
+    background-color: white;
+  }
+
+  &__desktop--headers {
+    display: flex;
+    background-color: $background-color-2;
+    justify-content: space-evenly;
+    color: $secondary-color-1;
+    text-transform: uppercase;
+    align-items: center;
+    height: 4rem;
+  }
+  @include tablet {
+    &__desktop {
+      border-bottom: solid $secondary-color-2 1px;
+    }
+  }
+  &__desktop--details {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 6%;
+  }
+
+  &__desktop--address {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: inherit;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: inherit;
+  }
+
+  &__desktop--name {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: inherit;
+  }
+  &__desktop--contact {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: inherit;
+  }
+  &__desktop--actions {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: inherit;
+    width: 5rem;
+  }
+}
+
+::placeholder {
+  margin-inline: 2rem;
+}
+
+@include desktop {
+  .form-text-field {
+    width: 25rem;
+  }
+
+  .button-primary {
+    width: 25rem;
+  }
+}
+
+@include tablet {
+  .warehousespage {
+    display: flex;
+    justify-content: center;
+  }
+}

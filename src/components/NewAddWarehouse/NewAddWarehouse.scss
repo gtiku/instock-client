@@ -1,0 +1,185 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+$arrow-img: url("../../assets/icons/arrow_drop_down-24px.svg");
+$blue-arrow-img: url("../../assets/icons/blue_arrow_drop_down.svg");
+
+.warehouse-form {
+  @extend .container-wrap;
+
+  &__header-block {
+    @include flex(row, flex-start, flex-start, nowrap);
+    padding: 2.4rem 1.6rem 2.4rem 0.8rem;
+    border-bottom: 1px solid $secondary-color-2;
+    @include tablet {
+      padding-left: 4rem;
+    }
+  }
+
+  &__header {
+    padding-left: 0.8rem;
+  }
+
+  &__go-back {
+    padding-top: 0.8rem;
+  }
+
+  &__form-fields {
+    @include tablet {
+      @include flex(row, center, flex-start, nowrap);
+    }
+  }
+
+  &__form-details,
+  &__form-availability {
+    padding: 2rem 2rem;
+    @include tablet {
+      width: 50%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 2rem 4rem;
+    }
+  }
+  &__form-details {
+    border-bottom: 1px solid $secondary-color-2;
+    @include tablet {
+      box-sizing: margin-box;
+      border-right: 1px solid $secondary-color-2;
+      border-bottom: none;
+    }
+  }
+
+  &__form-subheader {
+    @include tablet {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  &__form-details,
+  &__form-availability,
+  &__form-label {
+    @include flex(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $wrap: none
+    );
+  }
+
+  &__form-label {
+    width: 100%;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__form-input,
+  &__form-description,
+  &__form-select {
+    @extend .form-text-field;
+    padding: 0 1.6rem;
+    width: 100%;
+
+    &:focus {
+      border: $primary-color-2 solid 2px;
+    }
+
+    &--invalid {
+      border: #d22d2d solid 2px;
+    }
+  }
+
+  &__form-select {
+    margin-right: 1.6rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: $arrow-img;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+
+    &:focus {
+      background-image: $blue-arrow-img;
+    }
+  }
+
+  &__error {
+    @extend .p3;
+    margin-top: 0.4rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: -2rem;
+  }
+
+  &__error-image {
+    height: 1.33rem;
+    width: auto;
+    padding-right: 0.4rem;
+  }
+
+  &__form-input {
+    height: 3.8rem;
+  }
+
+  &__form-description {
+    font-family: inherit;
+    height: 12rem;
+    padding: 0.8rem 1.2rem;
+    resize: none;
+    overflow: hidden;
+  }
+
+  &__form-radio-input-label {
+    @include flex(row, flex-start, center, nowrap);
+  }
+  &__radio-block {
+    width: 100%;
+    @include flex(row, space-between, center, nowrap);
+    padding-right: 20%;
+  }
+
+  &__form-radio-text {
+    @extend .p2;
+  }
+
+  &__form-buttons {
+    padding: 1.6rem 2rem;
+    background-color: $background-color-2;
+    @include flex(row, space-around, center, nowrap);
+    @include tablet {
+      @include flex(row, flex-end, center, nowrap);
+    }
+  }
+
+  &__form-button-text {
+    @extend .p2;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__save,
+  &__cancel {
+    max-width: 45%;
+    height: 3.6rem;
+
+    @include tablet {
+      height: 3.8rem;
+      width: 9.8rem;
+    }
+  }
+
+  &__save {
+    @extend .button-primary;
+    margin-left: 0.8rem;
+  }
+
+  &__cancel {
+    @extend .button-secondary;
+    margin-right: 0.8rem;
+    @include tablet {
+      width: 7.2rem;
+    }
+  }
+}

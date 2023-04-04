@@ -1,0 +1,83 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.tablet {
+    display: none;
+
+    @include tablet {
+        display: initial;
+    }
+}
+
+// CODE FOR INVENTORY LIST HEAD ===============================
+
+.inventory-head {
+    &__head {
+        border-bottom: 1px solid $secondary-color-2;
+        padding: 2.4rem;
+        margin-bottom: -0.1rem;
+
+        @include tablet {
+            @include flex(row, space-between, center, initial);
+            border-bottom: none;
+            padding: 1.5rem 3.6rem 0.5rem 3.6rem;
+            margin: 0;
+        }
+    }
+
+    &__cta {
+        @include tablet {
+            @include flex(row, space-between, center, initial);
+            width: 32.5rem;
+        }
+
+        @include tablet {
+            width: 30rem;
+        }
+
+        @include desktop {
+            width: 37rem;
+        }
+    }
+
+    &__search-container {
+        position: relative;
+    }
+
+    &__search-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    &__search {
+        width: 100%;
+        margin: 1.6rem auto;
+
+        @include desktop {
+            width: 24rem;
+        }
+    }
+
+    &__titles {
+        @include tablet {
+            @include flex(row, space-between, center, initial);
+            padding: 0 3.6rem;
+            height: 4rem;
+            margin: 0 auto;
+            background-color: $background-color-2;
+        }
+    }
+
+    &__title-container {
+        @include tablet {
+            @include flex(row, flex-end, center, initial);
+            color: $secondary-color-1;
+        }
+    }
+
+    &__sort {
+        height: 1.6rem;
+        padding-left: 0.5rem;
+    }
+}

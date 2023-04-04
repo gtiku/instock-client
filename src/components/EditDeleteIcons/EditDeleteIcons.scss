@@ -1,0 +1,30 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/_mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.list-icons {
+    &__edit-delete-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+            @media (min-width: 768px) {
+                @include flex(row, space-between, center, initial);
+                width: 6rem;
+            }
+        }
+    }
+
+    &__item-delete {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__item-edit {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

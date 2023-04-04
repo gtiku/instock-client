@@ -1,0 +1,105 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.warehouse-inventory {
+    border-top: 1px solid $secondary-color-2;
+    padding: 2.4rem 1.6rem 1rem 1.6rem;
+
+    &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+    }
+
+    @include tablet {
+        padding: 1.6rem 2.4rem;
+        @include flex(row, space-between, center, initial);
+    }
+
+    &__info-container {
+        @include flex(column, flex-start, flex-start, wrap);
+        height: 15rem;
+
+        @include tablet {
+            @include flex(row, space-between, center, initial);
+            height: 100%;
+            width: 88%;
+        }
+    }
+
+    &__title {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__name-container {
+        width: 50%;
+        height: 7.5rem;
+
+        @include tablet {
+            height: 100%;
+            width: 22%;
+        }
+    }
+
+    &__name-link {
+        position: relative;
+    }
+
+    &__name-arrow {
+        all: unset;
+        position: absolute;
+        top: 0.5px;
+        height: 2rem;
+
+        &:hover {
+            animation: move-right 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+            animation-play-state: running;
+            @keyframes move-right {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(4px);
+                }
+            }
+        }
+    }
+
+    &__category-container {
+        @extend .warehouse-inventory__name-container;
+
+        @include tablet {
+            width: 17%;
+        }
+    }
+
+    &__status-container {
+        @extend .warehouse-inventory__name-container;
+
+        @include tablet {
+            width: 15%;
+        }
+    }
+
+    &__qty-container {
+        @extend .warehouse-inventory__name-container;
+        height: 6rem;
+
+        @include tablet {
+            height: 100%;
+            width: 19%;
+        }
+    }
+
+    &__edit-delete-container {
+        width: 100%;
+
+        @include tablet {
+            width: 7rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

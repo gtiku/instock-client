@@ -1,0 +1,36 @@
+
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+label   {
+    @include flex(column, space-between, flex-start, nowrap);
+    margin-top: 1.6rem;
+}
+
+.form-input  {
+
+    width: 100%;
+    padding-bottom: 2rem;;
+
+    &:focus {
+        color: $primary-color-1;
+        border-color: $primary-color-2;
+    }
+}
+
+.error {
+    position: absolute;
+    margin-top: 0.4rem;
+    
+    &__icon  {
+        height: 1.33rem;
+        width: auto;
+        padding-right: 0.4rem;
+    }
+
+    &__hidden  {
+        margin-top: 0.4rem;
+        margin-bottom: -4rem;
+        display: none;
+    }
+}

@@ -1,0 +1,8 @@
+@use "./styles/partials/global";
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+.page-body {
+    position: relative;
+    min-height: 100vh;
+}

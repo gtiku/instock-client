@@ -1,0 +1,24 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.sort-headers {
+    display: none;
+
+    @include tablet {
+        display: initial;
+        @include flex(row, space-between, center, initial);
+        height: 4.2rem;
+        background-color: $background-color-2;
+        color: $secondary-color-1;
+    }
+
+    &__sorticon {
+        height: 1.8rem;
+    }
+
+    &__categories {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2.4rem;
+    }
+}

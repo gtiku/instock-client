@@ -1,0 +1,78 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse  {
+
+    &__container  {
+        height: fit-content;
+        border-radius: 4px;
+        z-index: 10;
+        position: absolute;
+        background-color: $primary-color-3;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+        top: 15.7%;
+        left: 4.3%;
+        right: 4.3%;
+        bottom: 8.32%;
+
+        @include tablet   {
+            left: 4.17%;
+            right: 4.17%;
+            top: 10.5%;
+            bottom: 31.25%;
+        }    
+}
+
+    &__card-wrap    {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet  {
+           flex-direction: row;
+           border-top:  1px solid $secondary-color-2;
+           padding-top: 2.4rem;
+        }
+    }
+
+    &__title-wrap  {
+        @include flex(row, center, center, nowrap);
+        padding: 3.2rem 2.4rem 2.4rem 2.4rem;
+
+        @include tablet  {
+            @include flex(row, flex-start, center, nowrap);
+            padding: 3.2rem 0 2.1rem 3.6rem;
+            height: 9.3rem;
+         }
+    }
+
+    &__button-wrap  {
+        @include flex(row, space-between, center, nowrap);
+        padding: 1.6rem 2.4rem;
+
+        @include tablet  {
+            margin-top: 2.4rem;
+            padding: 1.6rem 3.2rem;
+            justify-content: flex-end;
+         }
+    }
+
+    &__form-button   {
+        width: 45%;
+        height: 3.6rem;
+        font-weight: 400;
+
+        @include tablet  {
+            margin-left: 1.6rem;
+            width: fit-content;
+            height: 3.8rem;
+        }
+    }
+
+
+    .icon  {
+        margin-right: 1.2rem;
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}

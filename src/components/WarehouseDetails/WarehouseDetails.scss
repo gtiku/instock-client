@@ -1,0 +1,173 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/_mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.warehouse-details {
+    @extend .container-wrap;
+
+    &__container {
+        background-color: $primary-color-3;
+        border-radius: 3px;
+        max-width: 1020px;
+        margin: auto;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2.8rem 1.6rem 2.4rem 1.6rem;
+
+        @include tablet {
+            padding: 2.8rem 2.4rem 2.4rem 2.4rem;
+<<<<<<< HEAD
+            max-width: 1004px;
+=======
+            max-width: 1020px;
+>>>>>>> develop
+            margin: auto;
+            border-bottom: 1px solid $secondary-color-2;
+        }
+    }
+
+    &__name-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
+    &__name {
+        padding-left: 0.4rem;
+    }
+
+    &__btn-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__btn {
+        background-image: url("../../assets/images/Icons/edit_white_24dp.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 1.8rem;
+        border-radius: 20px;
+        border: none;
+        background-color: $primary-color-2;
+        background-size: 55%;
+
+        &:hover {
+            background-color: $background-color-1;
+        }
+
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--tablet {
+            display: none;
+
+            @include tablet {
+                display: inline-block;
+                height: 3.8rem;
+                font-family: "TitilliumWeb";
+                font-size: 1.4rem;
+                color: $primary-color-3;
+                padding: 0 1.6rem 0 3.6rem;
+                background-position-x: 1.3rem;
+                background-size: 24%;
+                line-height: 2.2rem;
+            }
+        }
+    }
+
+    &__divider {
+        border-bottom: 0.1rem solid $secondary-color-2;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding: 1.6rem;
+
+        @include tablet {
+            padding: 2.4rem;
+            flex-direction: row;
+            justify-content: space-between;
+<<<<<<< HEAD
+            max-width: 1004px;
+=======
+            max-width: 1020px;
+>>>>>>> develop
+            margin: auto;
+        }
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2.4rem;
+
+        @include tablet {
+            padding: 0;
+            margin-right: 6rem;
+            flex-grow: 1;
+        }
+    }
+
+    &__address-container {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__info-container {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            flex-grow: 1;
+            justify-content: flex-start;
+            border-left: 0.1rem solid $secondary-color-2;
+        }
+    }
+
+    &__title {
+        @extend .p3;
+
+        color: $secondary-color-1;
+        padding-bottom: 0.4rem;
+    }
+
+    &__content {
+        @extend .p2;
+
+        @include tablet {
+            width: 19rem;
+        }
+    }
+
+    &__contact-name {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            margin-left: 3.6rem;
+            flex-grow: 1;
+        }
+    }
+
+    &__contact-info {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-grow: 1;
+        }
+    }
+}
